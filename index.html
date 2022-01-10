@@ -10,21 +10,53 @@
 </head>
 <body>
   <main id="container">
-    
+    <nav id="navbar" class="navbar">
+      <h1 class="navbar__title">devfinder</h1>
+      
+      <h2 class="navbar__subtitle">Light</h2>
+      <!-- <h2 class="navbar__subtitle">Dark</h2> -->
+    </nav>
+    <section class="searchBar">
+      <i class="searchBar__icon"></i>
+      <input type="text" class="searchBar__input" placeholder="Search GitHub username...">
+      <button class="searchBar__button">Search</button>
+    </section>
+    <section class="card">
+      <div class="card__profile">
+        <div class="card__img">Image</div>
+        <div class="card__profileInfo">
+          <h3 class="card__profileTitle">The Octocat</h3>
+          <p class="card__profileUserName">@octocat</p>
+          <p class="card__profileDate">Joined 25 Jan 2011</p>
+        </div>
+      </div>
+      <div class="card__bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ex molestiae voluptates natus eius.</div>
+      <div class="card__userData">
+        <div>
+          <div class="card__dataTitle">Repos</div>
+          <div class="card__dataNumber">8</div>
+        </div>
+        <div>
+          <div class="card__dataTitle">Followers</div>
+          <div class="card__dataNumber">3938</div>
+        </div>
+        <div>
+          <div class="card__dataTitle">Following</div>
+          <div class="card__dataNumber">9</div>
+        </div>
+      </div>
+      <div class="card__userContact">
+        <i class="card__icon--contact"></i>
+        <p class="card__text">San Francisco</p>
+        <i class="card__icon--contact"></i>
+        <p class="card__text">Not Available</p>
+        <i class="card__icon--contact"></i>
+        <p class="card__text"><a href="">https://github.blog</a></p>
+        <i class="card__icon--contact"></i>
+        <p class="card__text">@github</p>
+      </div>
+    </section>
   </main>
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
   <script src="/js/main.js"></script>
 </body>
 </html>
