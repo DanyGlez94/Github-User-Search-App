@@ -7,11 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <title>Frontend Mentor | GitHub user search app</title>
 </head>
 <body>
   <main id="container">
+    <!-- Inicio Navbar -->
     <nav id="navbar" class="navbar">
       <h1 class="navbar__title">devfinder</h1>
       
@@ -20,11 +21,17 @@
       </h2>
       <!-- <h2 class="navbar__subtitle">Dark</h2> -->
     </nav>
+    <!-- /Fin Navbar -->
+
+    <!-- Inicio Search Bar -->
     <section class="searchBar">
       <i class="searchBar__icon"></i>
       <input type="text" class="searchBar__input" placeholder="Search GitHub username...">
       <button class="searchBar__button">Search</button>
     </section>
+    <!-- /Inicio Search Bar -->
+
+    <!-- Inicio Card -->
     <section class="card">
       <div class="card__profile">
         <div id="cardImg" class="card__img"></div>
@@ -68,7 +75,8 @@
         </div>
       </div>
     </section>
+    <!-- /Fin Card -->
   </main>
-  <script src="/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
