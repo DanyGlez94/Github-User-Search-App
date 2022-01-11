@@ -1,0 +1,202 @@
+$Fuente1: 'Space Mono', monospace;
+$Dark-bg: #141D2F;
+$White: #FFFFFF;
+$Deep-Blue: #1E2A47;
+$Light-Blue: #0079FF;
+$Grey: #697C9A;
+$Grey-Blue: #4B6A9B;
+
+@mixin darkBox {
+    background-color: $Deep-Blue;
+    border-radius: 15px;
+    color: $White;
+}
+
+@mixin darkmode-text {
+    color: $White;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $Fuente1;
+}
+body {
+    width: 100%;
+    background-color: $Dark-bg;
+}
+#container {
+    color: $White;
+    width: 327px;
+    margin: 0 auto;
+}
+
+.navbar {
+    margin-top: 31px;
+    margin-bottom: 36px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    &__title {
+        font-size: 26px;
+        font-weight: 700;
+        cursor: default;
+    }
+    &__subtitle {
+        font-size: 13px;
+        font-weight: 700;
+        align-self: center;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        letter-spacing: 2.5px;
+        cursor: pointer;
+    }
+    &__icon {
+        width: 20px;
+        height: 20px;
+        background-image: url('../assets/icon-sun.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        fill: $White;
+        margin-left: 16px;
+    }
+    &__subtitle:hover,
+    &__subtitle:hover svg {
+        color: #90A4D4;
+        fill: #90A4D4;
+    }
+}
+
+.searchBar {
+    height: 60px;
+    margin-bottom: 16px;
+    color: $White;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include darkBox;
+    &__icon {
+        background-image: url('../assets/icon-search.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        align-self: center;
+        margin-left: 16px;
+    }
+    &__input {
+        background-color: transparent;
+        border: none;
+        width: 184px;
+        font-size: 13px;
+        justify-self: center;
+        color: inherit;
+        caret-color: $Light-Blue;
+    }
+    &__input::placeholder {
+        color: $White;
+    }
+    &__input:focus::placeholder {
+        color: transparent;
+    }
+    &__input:focus-visible {
+        outline: none;
+    }
+    &__button {
+        background-color: $Light-Blue;
+        border: none;
+        border-radius: 10px;
+        color: inherit;
+        width: 84px;
+        height: 46px;
+        margin: 7px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    &__button:hover {
+        background-color: #60ABFF;
+    }
+}
+
+.card {
+    @include darkBox;
+    padding: 32px 24px 48px;
+    min-height: 517px;
+    &__profile {
+        display: flex;
+        width: 234px;
+        margin-bottom: 33px;
+    }
+    &__img img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    &__profileInfo {
+        width: 144px;
+    }
+    &__profileTitle {
+        font-size: 16px;
+    }
+    &__profileUserName {
+        font-size: 13px;
+        color: $Light-Blue;
+        margin-bottom: 6px;
+    }
+    &__profileDate {
+        font-size: 13px;
+    }
+    &__bio {
+        font-size: 13px;
+        margin-bottom: 23px;
+        line-height: 25px;
+    }
+    &__userData {
+        background-color: $Dark-bg;
+        display: flex;
+        border-radius: 10px;
+        height: 85px;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    &__dataTitle {
+        font-size: 11px;
+    }
+    &__dataNumber {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    &__userContact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 13px;
+    }
+    &__userWrap {
+        display: flex;
+        margin-bottom: 16px;
+    }
+    &__icon--contact {
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 13px;
+        fill: $White;
+    }
+    &__text {
+        font-size: 13px;
+    }
+    &__text a {
+        text-decoration: none;
+        color: $White;
+    }
+    &__text a:hover {
+        text-decoration: underline;
+    }
+}
