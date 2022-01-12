@@ -1,0 +1,93 @@
+#container {
+    width: 573px;
+}
+
+.navbar {
+    margin-top: 140px;
+}
+
+.searchBar {
+    display: flex;
+    height: 69px;
+    margin-bottom: 24px;
+    &__icon {
+        margin-left: 32px;
+        margin-right: 24px;
+    }
+    &__input {
+        font-size: 18px;
+        flex-grow: 2;
+    }
+    &__noResults {
+        top: 24px;
+        right: 129px;
+    }
+    &__button {
+        width: 106px;
+        height: 50px;
+        margin: 9px;
+        font-size: 16px;
+    }
+}
+
+.card {
+    padding: 40px;
+    min-height: 481px;
+    height: 481px;
+    &__profile {
+        margin-bottom: 24px;
+    }
+    &__img img{
+        width: 117px;
+        height: 117px;
+        margin-right: 41px;
+    }
+    &__profileTitle {
+        font-size: 26px;
+    }
+    &__profileUserName a {
+        font-size: 16px;
+    }
+    &__profileDate {
+        font-size: 15px;
+    }
+    &__bio {
+        font-size: 15px;
+        min-height: 50px;
+        margin-bottom: 32px;
+    }
+    &__userData {
+        text-align: left;
+        justify-content: flex-start;
+        margin-bottom: 30px;
+        > div:first-child {
+            margin-left: 32px;
+            margin-right: 99px;
+        }
+        > div:last-child {
+            margin-left: 82px;
+        }
+    }
+    &__dataTitle {
+        font-size: 13px;
+    }
+    &__dataNumber {
+        font-size: 22px;
+    }
+    &__userContact {
+        flex-flow: row;
+        justify-content: flex-start;
+        min-height: 63px;
+        height: 63px;
+        >div:first-child {
+            width: 211px;
+            margin-right: 65px;
+        }
+    }
+    &__userWrap {
+        margin-bottom: 19px;
+    }
+    &__text {
+        font-size: 15px;
+    }
+}

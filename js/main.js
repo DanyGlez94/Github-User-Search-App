@@ -9,7 +9,7 @@ const getProfile = async(user) => {
             console.log(data);
             let profilePic = `<img src="${data.avatar_url}">`;
             let profileName = `${data.name}`;
-            let profileUsername = `<a href="https://github.com/${data.login}">@${data.login}</a>`;
+            let profileUsername = `<a target="_blank" href="https://github.com/${data.login}">@${data.login}</a>`;
             let joinedDate = new Date(data.created_at);
             let dayMonth = joinedDate.toLocaleDateString('en-US', {
                 day: '2-digit',
@@ -44,7 +44,7 @@ const getProfile = async(user) => {
                 document.getElementById('blog').style.opacity = '75%';
                 document.getElementById('blogSVG').style.opacity = '75%';
             } else {
-                document.getElementById('blog').innerHTML = `<a href="${blog}">${blog}</a>`;
+                document.getElementById('blog').innerHTML = `<a target="_blank" href="${blog}">${blog}</a>`;
             }
             let twitter = data.twitter_username;
             if (twitter === null) {
@@ -52,7 +52,7 @@ const getProfile = async(user) => {
                 document.getElementById('twitter').style.opacity = '75%';
                 document.getElementById('twitterSVG').style.opacity = '75%';
             } else {
-                document.getElementById('twitter').innerHTML = `<a href="https://twitter.com/${twitter}">${twitter}</a>`;
+                document.getElementById('twitter').innerHTML = `<a target="_blank" href="https://twitter.com/${twitter}">${twitter}</a>`;
             }
             let company = data.company;
             if (company === null) {

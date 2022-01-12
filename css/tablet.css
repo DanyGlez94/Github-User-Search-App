@@ -1,0 +1,124 @@
+#container {
+  width: 573px;
+}
+
+.navbar {
+  margin-top: 140px;
+}
+
+.searchBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 69px;
+  margin-bottom: 24px;
+}
+
+.searchBar__icon {
+  margin-left: 32px;
+  margin-right: 24px;
+}
+
+.searchBar__input {
+  font-size: 18px;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.searchBar__noResults {
+  top: 24px;
+  right: 129px;
+}
+
+.searchBar__button {
+  width: 106px;
+  height: 50px;
+  margin: 9px;
+  font-size: 16px;
+}
+
+.card {
+  padding: 40px;
+  min-height: 481px;
+  height: 481px;
+}
+
+.card__profile {
+  margin-bottom: 24px;
+}
+
+.card__img img {
+  width: 117px;
+  height: 117px;
+  margin-right: 41px;
+}
+
+.card__profileTitle {
+  font-size: 26px;
+}
+
+.card__profileUserName a {
+  font-size: 16px;
+}
+
+.card__profileDate {
+  font-size: 15px;
+}
+
+.card__bio {
+  font-size: 15px;
+  min-height: 50px;
+  margin-bottom: 32px;
+}
+
+.card__userData {
+  text-align: left;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.card__userData > div:first-child {
+  margin-left: 32px;
+  margin-right: 99px;
+}
+
+.card__userData > div:last-child {
+  margin-left: 82px;
+}
+
+.card__dataTitle {
+  font-size: 13px;
+}
+
+.card__dataNumber {
+  font-size: 22px;
+}
+
+.card__userContact {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  min-height: 63px;
+  height: 63px;
+}
+
+.card__userContact > div:first-child {
+  width: 211px;
+  margin-right: 65px;
+}
+
+.card__userWrap {
+  margin-bottom: 19px;
+}
+
+.card__text {
+  font-size: 15px;
+}
+/*# sourceMappingURL=tablet.css.map */
