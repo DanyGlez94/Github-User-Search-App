@@ -1,7 +1,7 @@
-const getProfile = async() => {
+const getProfile = async(user) => {
 
     try {
-        const response = await fetch(`https://api.github.com/users/danyglez94`);
+        const response = await fetch(`https://api.github.com/users/${user}`);
         console.log(response);
 
         if (response.status === 200) {
@@ -13,6 +13,8 @@ const getProfile = async() => {
             let joinedDate = new Date(data.created_at);
             let dayMonth = joinedDate.toLocaleDateString('en-US', {
                 day: '2-digit',
+            });
+            let month = joinedDate.toLocaleDateString('en-US', {
                 month: 'short',
             });
             let year = joinedDate.toLocaleDateString('en-US', {
@@ -63,13 +65,16 @@ const getProfile = async() => {
             document.getElementById('cardImg').innerHTML = profilePic;
             document.getElementById('profileName').innerHTML = profileName;
             document.getElementById('profileUser').innerHTML = profileUsername;
-            document.getElementById('joinedDate').innerHTML = `Joined ${dayMonth} ${year}`;
+            document.getElementById('joinedDate').innerHTML = `Joined ${dayMonth} ${month} ${year}`;
             document.getElementById('repos').innerHTML = repos;
             document.getElementById('followers').innerHTML = followers;
             document.getElementById('following').innerHTML = following;
+            document.getElementById('noResults').style.display = 'none';
 
         } else if (response.status === 404){
             console.log('Usuario no encontrado');
+            document.getElementById('noResults').style.display = 'block';
+            document.getElementById('inputSearch').value = '';
         } else {
             console.log('Hubo un error desconocido');
         }
@@ -80,4 +85,23 @@ const getProfile = async() => {
 
 }
 
-getProfile();
+
+const searchButton = document.querySelector('#searchButton'),
+inputSearch = document.querySelector('#inputSearch');
+
+searchButton.addEventListener('click', () => {
+    let user = document.getElementById('inputSearch').value;
+    getProfile(user);
+});
+
+inputSearch.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        let user = document.getElementById('inputSearch').value;
+        getProfile(user);
+    } else {
+        document.getElementById('noResults').style.display = 'none';
+        document.getElementById('noResults').style.display = 'none';
+    }
+});
+
+getProfile("octocat");

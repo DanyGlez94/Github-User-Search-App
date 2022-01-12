@@ -74,6 +74,7 @@ body {
     margin-bottom: 16px;
     color: $White;
     display: grid;
+    position: relative;
     grid-template-columns: repeat(3, 1fr);
     @include darkBox;
     &__icon {
@@ -101,8 +102,18 @@ body {
     &__input:focus::placeholder {
         color: transparent;
     }
-    &__input:focus-visible {
+    &__input:focus-visible, 
+    &__input:active {
         outline: none;
+    }
+    &__noResults {
+        position: absolute;
+        top: 18px;
+        right: 100px;
+        color: #F74646;
+        font-weight: 700;
+        font-size: 15px;
+        display: none;
     }
     &__button {
         background-color: $Light-Blue;
@@ -155,6 +166,7 @@ body {
         font-size: 13px;
         margin-bottom: 23px;
         line-height: 25px;
+        min-height: 75px;
     }
     &__userData {
         background-color: $Dark-bg;
@@ -178,10 +190,10 @@ body {
         flex-direction: column;
         justify-content: space-between;
         font-size: 13px;
+        min-height: 127px;
     }
     &__userWrap {
         display: flex;
-        margin-bottom: 16px;
     }
     &__icon--contact {
         width: 25px;

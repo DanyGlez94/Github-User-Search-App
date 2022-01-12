@@ -75,6 +75,7 @@ body {
   color: #FFFFFF;
   display: -ms-grid;
   display: grid;
+  position: relative;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
   background-color: #1E2A47;
@@ -138,8 +139,18 @@ body {
   color: transparent;
 }
 
-.searchBar__input:focus-visible {
+.searchBar__input:focus-visible, .searchBar__input:active {
   outline: none;
+}
+
+.searchBar__noResults {
+  position: absolute;
+  top: 18px;
+  right: 100px;
+  color: #F74646;
+  font-weight: 700;
+  font-size: 15px;
+  display: none;
 }
 
 .searchBar__button {
@@ -205,6 +216,7 @@ body {
   font-size: 13px;
   margin-bottom: 23px;
   line-height: 25px;
+  min-height: 75px;
 }
 
 .card__userData {
@@ -245,13 +257,13 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 13px;
+  min-height: 127px;
 }
 
 .card__userWrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 16px;
 }
 
 .card__icon--contact {
