@@ -1,10 +1,14 @@
 $Fuente1: 'Space Mono', monospace;
 $Dark-bg: #141D2F;
 $White: #FFFFFF;
+$Light-White: #FEFEFE;
 $Deep-Blue: #1E2A47;
+$Dark-text: #2B3442;
 $Light-Blue: #0079FF;
 $Grey: #697C9A;
 $Grey-Blue: #4B6A9B;
+$Light-Grey: #F6F8FF;
+$Box-Shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
 
 @mixin darkBox {
     background-color: $Deep-Blue;
@@ -25,6 +29,11 @@ $Grey-Blue: #4B6A9B;
 body {
     width: 100%;
     background-color: $Dark-bg;
+    transition: .3s ease all;
+
+    &.light {
+        background-color: $Light-Grey;
+    }
 }
 #container {
     color: $White;
@@ -37,6 +46,33 @@ body {
     margin-bottom: 36px;
     display: flex;
     justify-content: space-between;
+
+    body.light & {
+        &__title {
+            color: $Dark-text;
+        }
+        &__subtitle:first-child {
+            display: none;
+        }
+        &__subtitle {
+            color: $Grey;
+            display: flex;
+        }
+        &__icon {
+            fill: $Grey;
+        }
+        &__subtitle,
+        &__subtitle svg {
+            color: #222731;
+            fill: #222731;
+        }
+        &__subtitle:hover,
+        &__subtitle:hover svg {
+            color: $Grey-Blue;
+            fill: $Grey-Blue;
+        }
+    }
+
     &__title {
         font-size: 26px;
         font-weight: 700;
@@ -52,11 +88,19 @@ body {
         align-items: center;
         letter-spacing: 2.5px;
         cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 12px;
+    }
+    &__subtitle:last-child {
+        display: none;
+    }
+    #switch {
+        position: relative;
     }
     &__icon {
         width: 20px;
         height: 20px;
-        background-image: url('../assets/icon-sun.svg');
         background-repeat: no-repeat;
         background-size: contain;
         fill: $White;
@@ -77,6 +121,16 @@ body {
     position: relative;
     grid-template-columns: repeat(3, 1fr);
     @include darkBox;
+
+    body.light & {
+        background-color: $Light-White;
+        box-shadow: $Box-Shadow;
+        &__input,
+        &__input::placeholder {
+            color: $Grey-Blue;
+        }
+    }
+
     &__icon {
         background-image: url('../assets/icon-search.svg');
         background-repeat: no-repeat;
@@ -138,6 +192,36 @@ body {
     padding: 32px 24px 48px;
     min-height: 517px;
     margin-bottom: 79px;
+
+    body.light & {
+        background-color: $Light-White;
+        box-shadow: $Box-Shadow;
+        &__profileTitle {
+            color: $Dark-text;
+        }
+        &__profileDate {
+            color: $Grey;
+        }
+        &__bio {
+            color: $Grey-Blue;
+        }
+        &__userData {
+            background-color: $Light-Grey;
+        }
+        &__dataTitle {
+            color: $Grey-Blue;
+        }
+        &__dataNumber {
+            color: $Dark-text;
+        }
+        &__icon--contact,
+        &__text,
+        &__text a {
+            fill: $Grey-Blue;
+            color: $Grey-Blue;
+        }
+    }
+
     &__profile {
         display: flex;
         width: inherit;
@@ -218,3 +302,7 @@ body {
         text-decoration: underline;
     }
 }
+
+.cke_skin_kama span.cke_browser_webkit,.cke_skin_kama span.cke_browser_gecko18 {
+    outline: none !important;
+ }
