@@ -28,6 +28,16 @@ switchMode.addEventListener('click', () => {
     document.body.classList.toggle('light');
 });
 
+const darkOrLight = () => { //Función para saber si el usuario prefiere el tema oscuro o claro, basado en las preferencias de su computadora.
+    const dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
+    if (dark === true) {
+        console.log('El usuario prefiere tema oscuro');
+    } else {
+        console.log('El usuario prefiere tema claro');
+        document.body.classList.add('light');
+    }
+}
+
 const getProfile = async(user) => {
     try {
         const response = await fetch(`https://api.github.com/users/${user}`);
@@ -124,3 +134,4 @@ const getProfile = async(user) => {
 }
 
 getProfile("octocat"); //Manda octocat como usuario por defecto cuando la pantalla carga.
+darkOrLight();
