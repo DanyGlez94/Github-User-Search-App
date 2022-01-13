@@ -1,17 +1,46 @@
-const getProfile = async(user) => {
+const searchButton = document.querySelector('#searchButton'),
+      inputSearch = document.querySelector('#inputSearch'),
+      noResults = document.getElementById('noResults'),
+      switchMode = document.getElementById('switch');
 
+inputSearch.addEventListener('keyup', (e) => { //Se activa cada que el usuario presiona una tecla en el input.
+    if (e.keyCode === 13) { //Si la tecla presionada es enter
+        let user = inputSearch.value; 
+        getProfile(user); //Llama a la función getProfile y le manda como argumento lo que esté escrito en el input.
+    } else {
+        noResults.style.display = 'none'; //Oculta el mensaje "no results".
+    }
+});
+
+window.addEventListener('click', (e) => { //Una función para detectar si el click se hace en el botón Search
+    if (searchButton.contains(e.target)) { //Si se presiona el botón
+        console.log('click en botón');
+        let user = inputSearch.value;
+        getProfile(user);
+    } else { //Si se presiona cualquier otra cosa que no sea el botón
+        console.log('click fuera');
+        inputSearch.placeholder = 'Search GitHub username...';
+        noResults.style.display = 'none';
+    }
+});
+
+switchMode.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+});
+
+const getProfile = async(user) => {
     try {
         const response = await fetch(`https://api.github.com/users/${user}`);
         console.log(response);
 
-        if (response.status === 200) {
-            const data = await response.json();
+        if (response.status === 200) { //Si encontró el usuario, entra aquí
+            const data = await response.json(); //Le pedimos a response que nos muestre un json
             console.log(data);
             let profilePic = `<img src="${data.avatar_url}">`;
             let profileName = `${data.name}`;
             let profileUsername = `<a target="_blank" href="https://github.com/${data.login}">@${data.login}</a>`;
-            let joinedDate = new Date(data.created_at);
-            let dayMonth = joinedDate.toLocaleDateString('en-US', {
+            let joinedDate = new Date(data.created_at); //Obtenemos la fecha de creación de la cuenta
+            let day = joinedDate.toLocaleDateString('en-US', { //Obtenemos el día solamente, para después poderlo usar independiente con el formato que nosotros queramos, lo mismo hacemos con month y year.
                 day: '2-digit',
             });
             let month = joinedDate.toLocaleDateString('en-US', {
@@ -73,16 +102,17 @@ const getProfile = async(user) => {
             document.getElementById('cardImg').innerHTML = profilePic;
             document.getElementById('profileName').innerHTML = profileName;
             document.getElementById('profileUser').innerHTML = profileUsername;
-            document.getElementById('joinedDate').innerHTML = `Joined ${dayMonth} ${month} ${year}`;
+            document.getElementById('joinedDate').innerHTML = `Joined ${day} ${month} ${year}`;
             document.getElementById('repos').innerHTML = repos;
             document.getElementById('followers').innerHTML = followers;
             document.getElementById('following').innerHTML = following;
-            document.getElementById('noResults').style.display = 'none';
+            noResults.style.display = 'none';
 
         } else if (response.status === 404){
             console.log('Usuario no encontrado');
-            document.getElementById('noResults').style.display = 'block';
-            document.getElementById('inputSearch').value = '';
+            noResults.style.display = 'block';
+            inputSearch.value = '';
+            inputSearch.placeholder = '';
         } else {
             console.log('Hubo un error desconocido');
         }
@@ -93,29 +123,4 @@ const getProfile = async(user) => {
 
 }
 
-
-const searchButton = document.querySelector('#searchButton'),
-inputSearch = document.querySelector('#inputSearch');
-
-searchButton.addEventListener('click', () => {
-    let user = document.getElementById('inputSearch').value;
-    getProfile(user);
-});
-
-inputSearch.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
-        let user = document.getElementById('inputSearch').value;
-        getProfile(user);
-    } else {
-        document.getElementById('noResults').style.display = 'none';
-        document.getElementById('noResults').style.display = 'none';
-    }
-});
-
-getProfile("octocat");
-
-const switchMode = document.getElementById('switch');
-
-switchMode.addEventListener('click', () => {
-    document.body.classList.toggle('light');
-});
+getProfile("octocat"); //Manda octocat como usuario por defecto cuando la pantalla carga.
