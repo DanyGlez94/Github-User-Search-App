@@ -42,6 +42,7 @@
   padding: 40px;
   min-height: 481px;
   height: 481px;
+  margin-bottom: 0;
 }
 
 .card__profile {
