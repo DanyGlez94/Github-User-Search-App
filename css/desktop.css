@@ -12,13 +12,17 @@
 
 .card {
   position: relative;
-  min-height: 444px;
-  height: 444px;
-  padding: 44px 48px 48px;
+  min-height: 419px;
+  height: 419px;
+  padding: 48px;
 }
 
 .card__img img {
   margin-right: 37px;
+}
+
+.card__profileDate {
+  margin-top: 4px;
 }
 
 .card__profileInfo {
@@ -36,16 +40,21 @@
 
 .card__profileTitle {
   width: 300px;
+  margin-top: -5px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.card__bio {
+  min-height: 25px;
 }
 
 .card__wrapper {
   width: 480px;
   position: absolute;
   right: 48px;
-  top: 117px;
+  top: 130px;
 }
 
 .card__userData {

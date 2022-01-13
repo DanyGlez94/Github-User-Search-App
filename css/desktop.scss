@@ -14,11 +14,14 @@
 
 .card {
     position: relative;
-    min-height: 444px;
-    height: 444px;
-    padding: 44px 48px 48px;
+    min-height: 419px;
+    height: 419px;
+    padding: 48px;
     &__img img {
         margin-right: 37px;
+    }
+    &__profileDate {
+        margin-top: 4px;
     }
     &__profileInfo {
         display: flex;
@@ -28,15 +31,19 @@
     }
     &__profileTitle {
         width: 300px;
+        margin-top: -5px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+    }
+    &__bio {
+        min-height: 25px;
     }
     &__wrapper {
         width: 480px;
         position: absolute;
         right: 48px;
-        top: 117px;
+        top: 130px;
     }
     &__userData {
         margin-bottom: 37px;

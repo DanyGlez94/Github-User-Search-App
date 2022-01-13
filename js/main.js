@@ -46,7 +46,7 @@ const getProfile = async(user) => {
         if (response.status === 200) { //Si encontró el usuario, entra aquí
             const data = await response.json(); //Le pedimos a response que nos muestre un json
             console.log(data);
-            let profilePic = `<img src="${data.avatar_url}">`;
+            let profilePic = `<img src="${data.avatar_url}" alt="user avatar">`;
             let profileName = `${data.name}`;
             let profileUsername = `<a target="_blank" href="https://github.com/${data.login}">@${data.login}</a>`;
             let joinedDate = new Date(data.created_at); //Obtenemos la fecha de creación de la cuenta
@@ -133,5 +133,5 @@ const getProfile = async(user) => {
 
 }
 
-getProfile("octocat"); //Manda octocat como usuario por defecto cuando la pantalla carga.
 darkOrLight();
+getProfile("octocat"); //Manda octocat como usuario por defecto cuando la pantalla carga.
