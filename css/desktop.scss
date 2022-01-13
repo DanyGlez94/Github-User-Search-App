@@ -1,0 +1,44 @@
+#container {
+    width: 730px;
+}
+
+.navbar {
+    margin-top: 144px;
+}
+
+.searchBar {
+    &__noResults {
+        right: 138px;
+    }
+}
+
+.card {
+    position: relative;
+    min-height: 444px;
+    height: 444px;
+    padding: 44px 48px 48px;
+    &__img img {
+        margin-right: 37px;
+    }
+    &__profileInfo {
+        display: flex;
+        flex-grow: 2;
+        justify-content: space-between;
+        width: 480px;
+    }
+    &__profileTitle {
+        width: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    &__wrapper {
+        width: 480px;
+        position: absolute;
+        right: 48px;
+        top: 117px;
+    }
+    &__userData {
+        margin-bottom: 37px;
+    }
+}

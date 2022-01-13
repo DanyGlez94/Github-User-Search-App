@@ -1,1 +1,54 @@
-/* No CSS *//*# sourceMappingURL=desktop.css.map */
+#container {
+  width: 730px;
+}
+
+.navbar {
+  margin-top: 144px;
+}
+
+.searchBar__noResults {
+  right: 138px;
+}
+
+.card {
+  position: relative;
+  min-height: 444px;
+  height: 444px;
+  padding: 44px 48px 48px;
+}
+
+.card__img img {
+  margin-right: 37px;
+}
+
+.card__profileInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 480px;
+}
+
+.card__profileTitle {
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card__wrapper {
+  width: 480px;
+  position: absolute;
+  right: 48px;
+  top: 117px;
+}
+
+.card__userData {
+  margin-bottom: 37px;
+}
+/*# sourceMappingURL=desktop.css.map */

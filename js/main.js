@@ -37,6 +37,8 @@ const getProfile = async(user) => {
                 document.getElementById('locationSVG').style.opacity = '50%';
             } else {
                 document.getElementById('location').innerHTML = location;
+                document.getElementById('location').style.opacity = '1';
+                document.getElementById('locationSVG').style.opacity = '1';
             }
             let blog = data.blog;
             if (blog === "") {
@@ -45,6 +47,8 @@ const getProfile = async(user) => {
                 document.getElementById('blogSVG').style.opacity = '50%';
             } else {
                 document.getElementById('blog').innerHTML = `<a target="_blank" href="${blog}">${blog}</a>`;
+                document.getElementById('blog').style.opacity = '1';
+                document.getElementById('blogSVG').style.opacity = '1';
             }
             let twitter = data.twitter_username;
             if (twitter === null) {
@@ -53,6 +57,8 @@ const getProfile = async(user) => {
                 document.getElementById('twitterSVG').style.opacity = '50%';
             } else {
                 document.getElementById('twitter').innerHTML = `<a target="_blank" href="https://twitter.com/${twitter}">${twitter}</a>`;
+                document.getElementById('twitter').style.opacity = '1';
+                document.getElementById('twitterSVG').style.opacity = '1';
             }
             let company = data.company;
             if (company === null) {
@@ -61,6 +67,8 @@ const getProfile = async(user) => {
                 document.getElementById('companySVG').style.opacity = '50%';
             } else {
                 document.getElementById('company').innerHTML = company;
+                document.getElementById('company').style.opacity = '1';
+                document.getElementById('companySVG').style.opacity = '1';
             }
             document.getElementById('cardImg').innerHTML = profilePic;
             document.getElementById('profileName').innerHTML = profileName;
